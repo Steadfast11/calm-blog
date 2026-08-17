@@ -5,6 +5,7 @@
   function applyScale(){
     if(!wrap||!page) return;
     var vw = window.innerWidth;
+    if(vw < 900){ wrap.style.transform="none"; wrap.style.height="auto"; document.body.style.minHeight=""; return; }
     var scale = vw < DESIGN_WIDTH ? vw/DESIGN_WIDTH : 1;
     wrap.style.transform = "scale("+scale+")";
     var h = page.offsetHeight;
